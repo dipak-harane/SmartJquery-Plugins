@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Smartjquery-plugins by dipak-harane</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Smartjquery-plugins</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/dipak-harane/SmartJquery-Plugins" class="btn">View on GitHub</a>
+      <a href="https://github.com/dipak-harane/SmartJquery-Plugins/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/dipak-harane/SmartJquery-Plugins/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>&lt;!DOCTYPE html&gt;
+
+    </p>
+        Lobibox - Responsive jQuery notification plugin
+        
+        
+        &lt;!----&gt;
+        
+        
+
+<pre><code>    &lt;link rel="stylesheet" href="Lobibox.min.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="container-content"&gt;
+            &lt;!--Messageboxes--&gt;
+            &lt;div id="messageboxes"&gt;
+                &lt;!--Example--&gt;
+                &lt;div id="lobibox-messagebox-examples"&gt;
+                    &lt;h3&gt;Examples&lt;/h3&gt;
+                    &lt;div&gt;
+                        &lt;!--Basic examples--&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;!--Confirm--&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupYesNoBasic" class="btn btn-primary"&gt;Confirm&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/fieldset&gt;
+                            &lt;!--Alerts--&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupErrorBasic" class="btn btn-danger"&gt;Show Error&lt;/button&gt;
+                                    &lt;button id="popupSuccessBasic" class="btn btn-success"&gt;Show Success&lt;/button&gt;
+                                    &lt;button id="popupInfoBasic" class="btn btn-info"&gt;Show info&lt;/button&gt;
+                                    &lt;button id="popupWarningBasic" class="btn btn-warning"&gt;Show Warning&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/fieldset&gt;
+                            &lt;!--Prompt--&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupPromptBasic" class="btn btn-primary"&gt;Prompt&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/fieldset&gt;
+                            &lt;!--Progress--&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupProgressBasic" class="btn btn-primary"&gt;Progress&lt;/button&gt;
+                                &lt;/div&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupProgressBootstrap" class="btn btn-primary"&gt;Bootstrap progress&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/fieldset&gt;
+                            &lt;!--Window--&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="bs-example"&gt;
+                                    &lt;button id="popupWindowBasic" class="btn btn-primary"&gt;Window&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/fieldset&gt;
+                        &lt;/div&gt;
+                        &lt;!--Custom buttons--&gt;
+                        &lt;div&gt;
+                            &lt;div class="bs-example"&gt;
+                                &lt;h3&gt;Custom buttons&lt;/h3&gt;
+                                &lt;button id="popupProgressErrorButtons" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!--Disable icon--&gt;
+                        &lt;div&gt;
+                            &lt;div class="bs-example"&gt;
+                                &lt;h3&gt;Disable icon&lt;/h3&gt;
+                                &lt;button id="popupConfirmNoIcon" class="btn btn-primary"&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!--Lobibox window--&gt;
+                        &lt;div&gt;
+                            &lt;div class="bs-example"&gt;
+                                &lt;h3&gt;Advanced usage of Lobibox.window&lt;/h3&gt;
+                                &lt;button id="popupWindowExample" class="btn btn-primary"&gt;Window&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!--Callbacks--&gt;
+                    &lt;div&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;h3&gt;Callbacks&lt;/h3&gt;
+                            &lt;div class="callout callout-info"&gt;
+                                &lt;p&gt;All popup boxes have &lt;code&gt;callback&lt;/code&gt; option&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;button id="popupYesNoCallback" class="btn btn-primary"&gt;Confirm&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class="highlight"&gt;
+                            &lt;pre&gt;&lt;code&gt;Lobibox.confirm({
+msg: "Are you sure you want to delete this user?",
+callback: function ($this, type, ev) {
+    //Your code goes here
+}
+</code></pre>
+
+<p>});<br>
+
+                            
+                        
+                        </p>
+                            <div>
+                                <div>
+                                    <div>
+                                        Popup type
+                                        
+                                            Confirm
+                                            Alert
+                                            Prompt
+                                            Progress
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <h4>
+<a id="------------------------------------------------------------------------------------common-parameters----------------------------------------------------------------------------" class="anchor" href="#------------------------------------------------------------------------------------common-parameters----------------------------------------------------------------------------" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+                                        <a href="#common-fieldset-wrapper">
+                                            Common parameters
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="common-fieldset-wrapper">
+                                    <div>
+                                        
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        title
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    Base class (default)
+                                                    
+                                                </div>
+                                                <div>
+                                                    Show class
+                                                    
+                                                </div>
+                                                <div>
+                                                    Hide class
+                                                    
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    Message
+                                                    
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        Width
+                                                        <div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        Height
+                                                        <div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        
+                                                        <div>
+                                                            
+                                                                 Close button
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        
+                                                        <div>
+                                                            
+                                                                 Draggable
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        
+                                                        <div>
+                                                            
+                                                                 Modal
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        
+                                                        <div>
+                                                            
+                                                                 Close on escape
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+<pre><code>                        &lt;div class="row"&gt;
+                            &lt;div class="col-md-12"&gt;
+                                &lt;div class="panel-group" id="accordion" role="tablist"&gt;
+                                    &lt;div class="panel panel-default"&gt;
+                                        &lt;div class="panel-heading" role="tab" id="headingOne"&gt;
+                                            &lt;h4 class="panel-title"&gt;
+                                                &lt;a data-toggle="collapse" data-parent="#accordion" href="#confirm-options" aria-expanded="true" aria-controls="collapseOne"&gt;
+                                                    Confirm options
+                                                &lt;/a&gt;
+                                            &lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div id="confirm-options" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne"&gt;
+                                            &lt;div class="panel-body"&gt;
+                                                &lt;fieldset class="confirm-fieldset"&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Icon Class&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="iconClass" value="glyphicon glyphicon-question-sign"/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/fieldset&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="panel panel-default"&gt;
+                                        &lt;div class="panel-heading" role="tab" id="headingTwo"&gt;
+                                            &lt;h4 class="panel-title"&gt;
+                                                &lt;a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#alert-options" aria-expanded="false" aria-controls="collapseTwo"&gt;
+                                                    Alert options
+                                                &lt;/a&gt;
+                                            &lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div id="alert-options" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"&gt;
+                                            &lt;div class="panel-body"&gt;
+                                                &lt;fieldset class="alert-fieldset" disabled=""&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Alert type&lt;/label&gt;
+                                                                &lt;select class="form-control" name="type"&gt;
+                                                                    &lt;option value="success"&gt;Success&lt;/option&gt;
+                                                                    &lt;option value="error"&gt;Error&lt;/option&gt;
+                                                                    &lt;option value="info"&gt;Info&lt;/option&gt;
+                                                                    &lt;option value="warning"&gt;Warning&lt;/option&gt;
+                                                                &lt;/select&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Icon Class&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="iconClass"/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/fieldset&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="panel panel-default"&gt;
+                                        &lt;div class="panel-heading" role="tab"&gt;
+                                            &lt;h4 class="panel-title"&gt;
+                                                &lt;a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#prompt-options" aria-expanded="false" aria-controls="collapseThree"&gt;
+                                                    Prompt options
+                                                &lt;/a&gt;
+                                            &lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div id="prompt-options" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree"&gt;
+                                            &lt;div class="panel-body"&gt;
+                                                &lt;fieldset class="prompt-fieldset" disabled=""&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Type&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="type" value="text"/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Placeholder&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="placeholder" value=""/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Value&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="value" value=""/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Label&lt;/label&gt;
+                                                                &lt;input type="text" class="form-control" name="label"/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;&lt;/label&gt;
+                                                                &lt;div class="checkbox"&gt;
+                                                                    &lt;label&gt;
+                                                                        &lt;input type="checkbox" name="multiline"&gt; Multiline
+                                                                    &lt;/label&gt;
+                                                                &lt;/div&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;div class="form-group"&gt;
+                                                                &lt;label class="control-label"&gt;Lines &lt;small class="text-muted"&gt;(For multiline)&lt;/small&gt;&lt;/label&gt;
+                                                                &lt;input type="number" class="form-control" name="lines" value=""/&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/fieldset&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="panel panel-default"&gt;
+                                        &lt;div class="panel-heading" role="tab"&gt;
+                                            &lt;h4 class="panel-title"&gt;
+                                                &lt;a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#progress-options" aria-expanded="false" aria-controls="collapseThree"&gt;
+                                                    Progress options
+                                                &lt;/a&gt;
+                                            &lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div id="progress-options" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree"&gt;
+                                            &lt;div class="panel-body"&gt;
+                                                &lt;div class="callout callout-danger"&gt;
+                                                    &lt;p&gt;Progress does not update itself.&lt;/p&gt;
+                                                    &lt;p&gt;But you can implement it easily when uploading or waiting something&lt;/p&gt;
+                                                &lt;/div&gt;
+                                                &lt;fieldset class="progress-fieldset" disabled=""&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;label class="control-label"&gt;Label&lt;/label&gt;
+                                                            &lt;input type="text" class="form-control" name="label" value=""/&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-4"&gt;
+                                                            &lt;label class="control-label"&gt;&lt;/label&gt;
+                                                            &lt;div class="checkbox"&gt;
+                                                                &lt;label&gt;
+                                                                    &lt;input type="checkbox" name="showProgressLabel" checked&gt; Progress label
+                                                                &lt;/label&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/fieldset&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;button class="btn btn-primary"&gt;Create popup&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!--Notifications--&gt;
+            &lt;div id="notifications"&gt;
+                &lt;!--Examples--&gt;
+                &lt;div id="lobibox-notification-examples"&gt;
+                    &lt;h3&gt;Examples&lt;/h3&gt;
+                    &lt;!--Basic notifications--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Basic notifications &lt;small class="text-muted"&gt;&lt;small&gt;Can be closed by clicking on it&lt;/small&gt;&lt;/small&gt;&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefault" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfo" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarning" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicError" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccess" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--With image--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;With image&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefaultImage" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfoImage" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningImage" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorImage" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessImage" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Disable sound--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Disable sound&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicInfoNoSound" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningNoSound" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorNoSound" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessNoSound" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Custom title--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Custom title&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefaultCustomTitle" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfoCustomTitle" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningCustomTitle" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorCustomTitle" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessCustomTitle" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Without icon and image--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Without icon and image&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefaultNoIcon" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfoNoIcon" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningNoIcon" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorNoIcon" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessNoIcon" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Increase delay time--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Increase delay time&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefaultCustomDelay" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfoCustomDelay" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningCustomDelay" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorCustomDelay" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessCustomDelay" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Sticky--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Sticky (without delay)&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicDefaultNoDelay" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="basicInfoNoDelay" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningNoDelay" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorNoDelay" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessNoDelay" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Alternative position--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Alternative position&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicInfoPosition" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningPosition" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorPosition" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessPosition" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Change width--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Change width&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicInfoWidth" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningWidth" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorWidth" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessWidth" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Change Animation--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Change Animation&lt;/legend&gt;
+                        &lt;p class="text-muted"&gt;For animation Lobibox is depended on animate.css. You can use any animate.css classes&lt;/p&gt;
+                        &lt;p&gt;By default &lt;code&gt;.animated&lt;/code&gt; class is added&lt;/p&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="basicInfoAnimation" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="basicWarningAnimation" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="basicErrorAnimation" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="basicSuccessAnimation" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;h2&gt;Large Notifications&lt;/h2&gt;
+                    &lt;!--Basic examples--&gt;
+                    &lt;fieldset&gt;
+                        &lt;p&gt;Large notifications&lt;/p&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;are sticky&lt;/li&gt;
+                            &lt;li&gt;can be closed only by clicking close button&lt;/li&gt;
+                            &lt;li&gt;does not have delay&lt;/li&gt;
+                            &lt;li&gt;are larger in width&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;!--&lt;button id="largeDefaultBasic" class="btn btn-default"&gt;Default&lt;/button&gt;--&gt;
+                            &lt;button id="largeInfoBasic" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="largeWarningBasic" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="largeErrorBasic" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="largeSuccessBasic" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--With Image--&gt;
+                    &lt;fieldset&gt;
+                        &lt;h3&gt;With Image&lt;/h3&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;!--&lt;button id="largeDefaultImage" class="btn btn-default"&gt;Default&lt;/button&gt;--&gt;
+                            &lt;button id="largeInfoImage" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="largeWarningImage" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="largeErrorImage" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="largeSuccessImage" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Alternative position--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Alternative position&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;!--&lt;button id="largeDefaultPosition" class="btn btn-default"&gt;Default&lt;/button&gt;--&gt;
+                            &lt;button id="largeInfoPosition" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="largeWarningPosition" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="largeErrorPosition" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="largeSuccessPosition" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Change animation--&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Change animation&lt;/legend&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;!--&lt;button id="largeDefaultAnimation" class="btn btn-default"&gt;Default&lt;/button&gt;--&gt;
+                            &lt;button id="largeInfoAnimation" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="largeWarningAnimation" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="largeErrorAnimation" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="largeSuccessAnimation" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;h2&gt;Mini notifications&lt;/h2&gt;
+                    &lt;p&gt;For mini notifications icon and image is shown on small size and title is disabled by default. Although you can enable it by giving &lt;code&gt;title&lt;/code&gt; parameter when initializing.&lt;/p&gt;
+                    &lt;!--Basic example--&gt;
+                    &lt;fieldset&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="miniDefaultAnimation" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="miniInfoAnimation" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="miniWarningAnimation" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="miniErrorAnimation" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="miniSuccessAnimation" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--With image--&gt;
+                    &lt;fieldset&gt;
+                        &lt;h3&gt;With image&lt;/h3&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="miniDefaultImage" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="miniInfoImage" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="miniWarningImage" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="miniErrorImage" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="miniSuccessImage" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Without icon--&gt;
+                    &lt;fieldset&gt;
+                        &lt;h3&gt;Without icon&lt;/h3&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="miniDefaultNoIcon" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="miniInfoNoIcon" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="miniWarningNoIcon" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="miniErrorNoIcon" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="miniSuccessNoIcon" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--With title--&gt;
+                    &lt;fieldset&gt;
+                        &lt;h3&gt;With title&lt;/h3&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="miniDefaultTitle" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="miniInfoTitle" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="miniWarningTitle" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="miniErrorTitle" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="miniSuccessTitle" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;!--Rounded corners--&gt;
+                    &lt;fieldset&gt;
+                        &lt;h3&gt;Rounded corners &lt;span class="label label-danger"&gt;new&lt;/span&gt;&lt;/h3&gt;
+                        &lt;div class="bs-example"&gt;
+                            &lt;button id="miniDefaultRounded" class="btn btn-default"&gt;Default&lt;/button&gt;
+                            &lt;button id="miniInfoRounded" class="btn btn-info"&gt;Info&lt;/button&gt;
+                            &lt;button id="miniWarningRounded" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button id="miniErrorRounded" class="btn btn-danger"&gt;Error&lt;/button&gt;
+                            &lt;button id="miniSuccessRounded" class="btn btn-success"&gt;Success&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src="jquery.1.11.min.js"&gt;&lt;/script&gt;
+    &lt;!--&lt;script src="bootstrap/dist/js/bootstrap.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script src="Lobibox.js"&gt;&lt;/script&gt;
+    &lt;script src="demo.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/dipak-harane/SmartJquery-Plugins">Smartjquery-plugins</a> is maintained by <a href="https://github.com/dipak-harane">dipak-harane</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
